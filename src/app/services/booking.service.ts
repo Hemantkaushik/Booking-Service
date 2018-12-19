@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -62,7 +61,7 @@ export class BookingService {
   /** POST: add a new booking to the server */
   addBooking (booking: Booking): Observable<Booking> {
     return this.http.post<Booking>(this.bookingUrl, booking, httpOptions).pipe(
-      tap((booking: Booking) => this.log(`added booking w/ id=${booking.id}`)),
+    tap((booking: Booking) => this.log(`added booking w/ id=${booking.id}`)),
       catchError(this.handleError<Booking>('addBooking'))
     );
   }
@@ -100,7 +99,7 @@ export class BookingService {
     };
   }
   private log(message: string) {
-     // need to implement message service 
+     // need to implement message service
     // this.messageService.add(`BookingService: ${message}`);
   }
 

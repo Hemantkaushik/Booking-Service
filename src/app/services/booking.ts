@@ -1,5 +1,3 @@
-import { parseHttpResponse } from "selenium-webdriver/http";
-
 export class Booking {
     id: number;
     name: string;

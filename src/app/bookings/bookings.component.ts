@@ -9,7 +9,7 @@ import { BookingService } from '../services/booking.service';
 })
 export class BookingsComponent implements OnInit {
   bookings: Booking[];
-  p: number = 1;
+  p = 1;
   constructor(private bookingService: BookingService) {  }
 
   ngOnInit() {
