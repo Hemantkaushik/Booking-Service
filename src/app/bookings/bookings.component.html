@@ -1,0 +1,53 @@
+<h2>My bookings</h2>
+  <button routerLink="/addbooking" >
+    Add New
+  </button>
+ <table >
+    <thead>
+      <tr>
+      <th style="width:15%;text-align: left;">
+      Id / Name
+      </th>
+      <th style="width:15% ;text-align: left;">
+      Phone
+      </th>
+      <th style="width:30%;text-align: left;">
+      Email
+      </th>
+      <th style="width:20%;text-align: left;">
+      Address
+      </th>
+      <th style="width:20%;text-align: left;">
+        Action
+      </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings | paginate: { itemsPerPage: 5, currentPage: p };">
+      <td>
+      <a routerLink="/detail/{{booking.id}}"><span class="badge">{{booking.id}}</span> {{booking.name}}
+      </a>
+      </td>
+      <td>
+          {{booking.phone}}
+      </td>
+      <td>
+          {{booking.Email}}
+      </td>
+      <td>
+          {{booking.Address}}
+      </td>
+      <td>
+          <button  title="delete booking"  (click)="delete(booking)"> x </button>
+      </td>
+      
+      </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </table>
+   
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

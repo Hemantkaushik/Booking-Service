@@ -1,0 +1,51 @@
+<h2>Add New Bookings</h2>
+
+<div>
+  <table>
+    <tr>
+      <td>
+          <label>Name:
+              
+            </label>
+
+      </td>
+      <td>
+          <input #bookingName  required="required"/>
+      </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Phone:
+                
+              </label>
+        </td>
+        <td><input #bookingPhone required="required" /></td>
+      </tr>
+      <tr>
+          <td>
+              <label>Email:
+                  
+                </label>
+          </td>
+          <td><input #bookingEmail /></td>
+        </tr>
+        <tr>
+            <td>
+                <label>Address:
+                    
+                  </label>
+            </td>
+            <td><input #bookingAddress /></td>
+          </tr>
+          <tr>
+            <td>
+<!-- (click) passes input value to add() and then clears the input -->
+<button (click)="add(bookingName.value,bookingPhone.value,bookingEmail.value,bookingAddress.value); ">
+    Save
+  </button>
+  
+            </td>
+            <td><button (click)="goBack()">Cancel</button></td>
+          </tr>
+  </table>
+</div>

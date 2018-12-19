@@ -1,0 +1,11 @@
+<h3>Top Bookings</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let booking of bookings" class="col-1-4"
+      routerLink="/detail/{{booking.id}}">
+    <div class="module booking">
+      <h4>{{booking.name}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-booking-search></app-booking-search>
